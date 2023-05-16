@@ -25,7 +25,7 @@ class Student: # Student 클래스
         else: # 그 외
             print(f"오류입니다.\n") # 오류
 
-   def print_semester(self): # 학기를 출력하는 메소드
+    def print_semester(self): # 학기를 출력하는 메소드
         if self.semester <= 3: # 3학기차 까지는 (정수로 입력받음) 
             print(f"{self.semester}학기차인 {self.name}은(는) 아직 전공선택 전입니다.")
         elif self.semester >= 4: # 4학기차 이상은
