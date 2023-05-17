@@ -33,13 +33,10 @@ class Student:  # Student라는 이름의 class 생성
     def print_subject(self):  # print_subject라는 이름의 메서드 생성
         return (f"{subject_list}를 수강합니다.")  # subject들이 들어있는 subject_list를 반환
         
-    def subject_into(subject_list):  # subject_into라는 함수 생성
-        subject_dic = {} # 빈 딕셔너리 생성
-        for sub in subject_list: # subject_list의 값들을 하나씩 sub라는 변수에 저장
-            subject_dic[sub] = len(sub) # subject_dic라는 빈 딕셔너리에 sub라는 key값과 sub의 길이를 values값으로 저장        
-        print("자세한 수강목록입니다.")  # 문자열 출력
-        for key, value in subject_dic.items():  # 딕셔너리의 키과 값들을 key와 value에 할당
-            print(f"과목명: {key} / 과목명의 길이: {value}")  # key와 value를 포함한 문자열을 출력
+def subject_info(subject_dic):  # subject_into라는 함수 생성
+    print("자세한 수강목록입니다.")  # 문자열 출력
+    for key, value in subject_dic.items():  # 딕셔너리의 키과 값들을 key와 value에 할당
+        print(f"과목명: {key} / 과목명의 길이: {value}")  # key와 value를 포함한 문자열을 출력
        
         
 
@@ -62,6 +59,10 @@ while(True):  # while반복문을 이용해 무한루프 생성
     for i in range(3):  # for반복문을 이용해 3번 반복
         subject = input("과목을 입력하시오. : ")  # 과목을 입력 받아 변수에 저장
         subject_list.append(subject)  # 입력받은 변수를 리스트에 추가
+        
+    subject_dic = {} # 빈 딕셔너리 생성
+    for sub in subject_list: # subject_list의 값들을 하나씩 sub라는 변수에 저장
+        subject_dic[sub] = len(sub) # subject_dic라는 빈 딕셔너리에 sub라는 key값과 sub의 길이를 values값으로 저장
             
     print("\n")  # 한 줄 띄우기
 
@@ -72,7 +73,7 @@ while(True):  # while반복문을 이용해 무한루프 생성
     s.print_semester()    # print_semester 메소드 호출
     print(s.print_subject())  # print_subject 메소드 출력
     print("\n")  # 한 줄 띄우기
-    Student.subject_into(subject_list)  # subject_into 함수에 subject_list라는 매개변수를 이용해 호출
+    subject_info(subject_dic)  # subject_into 함수에 subject_dic라는 매개변수를 이용해 호출
     print("\n")  # while문의 마지막이므로 한 줄 띄우기
     
     
