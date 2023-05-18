@@ -20,28 +20,28 @@ class Student :
     def print_schoolNum(self):
         # print_schoolNum 메서드로 생성자 구현  
             if self.schoolNum[5:6] == "1": # 인덱스 범위 슬라이싱
-                print(f"학번은 {self.schoolNum}로 인문융합자율학부 소속입니다.")
+                return(f"학번은 {self.schoolNum}로 인문융합자율학부 소속입니다.")
             elif self.schoolNum[5:6] == "2": 
-                print(f"학번은 {self.schoolNum}로 사회융합자율학부 소속입니다.") 
+                return(f"학번은 {self.schoolNum}로 사회융합자율학부 소속입니다.") 
             elif self.schoolNum[5:6] =="3": 
-                print(f"학번은 {self.schoolNum}로 미디어융합자율학부 소속입니다.") 
+                return(f"학번은 {self.schoolNum}로 미디어융합자율학부 소속입니다.") 
             elif self.schoolNum[5:6] =="4":
-                print(f"학번은 {self.schoolNum}로 IT융합자율학부 소속입니다.") 
+                return(f"학번은 {self.schoolNum}로 IT융합자율학부 소속입니다.") 
             else:
-                print(f"오류입니다.")
+                return(f"오류입니다.")
                 # 슬라이싱 된 숫자에 따라 학부 구분, 이외의 숫자일 경우 오류라고 출력함.
 
     def print_semester(self):
         # print_semester 메서드로 생성자 구현
-        if int(0 < self.semester < 4):
+        if (0 < self.semester < 4):
             print(f"{self.name}은(는){self.semester}학기차로 전공선택 전입니다.")  # 전공 선택 전
-        elif int(3 < self.semester < 9):
+        elif (3 < self.semester < 9):
             print(f"{self.name}은(는) {self.semester}학기차로 전공선택을 마쳤습니다.")  # 전공 선택 후
         else:
             print("오류입니다.")  # 오류 출력
 
     def print_subject(self):  # 수강 중인 과목 리스트 출력
-        print(f'{self.subject}를 수강합니다.')
+        return(f'{self.subject}를 수강합니다.')
 
 
 
@@ -79,10 +79,10 @@ while True :
 
     class_name = Student(name, schoolNum, semester, subject_list)
     # 객체 초기화
-    class_name.print_name()
-    class_name.print_schoolNum()
-    class_name.print_semester()
-    class_name.print_subject()
+    Student.print_name()
+    Student.print_schoolNum()
+    Student.print_semester()
+    Student.print_subject()
         # 객체 메서드를 부르고 출력
 
     print()
