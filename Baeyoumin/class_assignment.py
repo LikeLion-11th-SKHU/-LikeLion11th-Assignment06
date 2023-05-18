@@ -20,17 +20,17 @@ class Student :
         elif self.schoolNum[5:6] =="4": # 4이라면
             print(f"학번은 {self.schoolNum}로 IT융합자율학부 소속입니다.") 
         else: # 그 외 라면
-            return(f"오류입니다.\n") # 오류를 나타냅니다.
+            print(f"오류입니다.\n") # 오류를 나타냅니다.
 
     def print_semester(self): # 학기를 출력하는 메소드입니다.
-        if(self.semeter <= 3 & self.semeter > 0): # 0보다 크고 3이하까지
+        if(self.semeter <= 3 and self.semeter > 0): # 0보다 크고 3이하까지
             print(f"{self.semester}학기차인 {self.name}은(는) 아직 전공선택 전입니다.")
         elif self.semester >= 4: # 4학기차 이상부터는
             print(f"{self.name}은(는) {self.semester}학기차로 전공선택을 마쳤습니다.") 
         else: 
             print(f"오류입니다") # 오류를 나타냅니다.
         
-    def print_subject(self): # 수강 과목을 출력하는 메소드입니다.
+    def print_subject(self): # 수강 과목을 반환하는 메소드입니다.
         print(f"{self.subject}를 수강합니다.")
 
 def subject_info(**subject_dict): # 수강 과목 출력합니다.(딕셔녀링 언패킹)
@@ -63,10 +63,10 @@ while True:  # 반복문(while)입니다.
     class_name = Student(name, schoolNum, semester, subject_list) # Student 객체를 만듭니다.
 
     # 이름, 학번, 학기, 수강 과목의 Student 객체를 호출합니다.
-    class_name.print_name()
-    class_name.print_schoolNum() 
-    class_name.print_semester() 
-    class_name.print_subject()
+    Student.print_name(class_name)
+    Student.print_schoolNum(class_name)
+    Student.print_semester(class_name)
+    Student.print_subject(class_name)
     print()
 
     subject_info(**subject_dict) # 과목 정보를 출력합니다.
