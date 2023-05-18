@@ -56,10 +56,10 @@ def subject_info() :
         print(f'과목명:{key}/과목명의 길이:{len(value)}')
            
    
-Class_name.print_name()
-Class_name.print_schoolNum()
-Class_name.print_semester()
-Class_name.print_subject()
+Student.print_name()
+Student.print_schoolNum()
+Student.print_semester()
+Student.print_subject()
 print()
 
 subject_info()
