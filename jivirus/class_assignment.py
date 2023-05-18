@@ -41,37 +41,38 @@ class Student:
 
 while True: #반복문
     class_name=[] #반복문에서 class_name을 사용전 null값을 지정해주었습니다
-    class_name == input("객체 명을 입력하시오. (단, 영문으로):") #
-    if class_name == "종료":
-        break
+    class_name == input("객체 명을 입력하시오. (단, 영문으로):") #객체명 입력
+    if class_name == "종료": #객체명 종료
+        break  #반복문 탈출
 
-    name = input("이름을 입력하시오. (단, 한글로) ")
-    schoolNum = input("학번을 입력하시오: ")
-    while len(schoolNum) != 9:
-        print("오류입니다.\n")
-        schoolNum = input("학번을 입력하시오: ")
+    name = input("이름을 입력하시오. (단, 한글로) ") #이름 입력
+    schoolNum = input("학번을 입력하시오: ") #학번 입력
+    while len(schoolNum) != 9: #학번이 9자리가 아닐 경우
+        print("오류입니다.\n") #9자리가 아닐경우 오류입니다 라는 메세지와 함꼐 다시 돌아감
+        schoolNum = input("학번을 입력하시오: ") #학번 재입력
 
-    semester = int(input("학기를 입력하시오. (단, 숫자로): "))
+    semester = int(input("학기를 입력하시오. (단, 숫자로): ")) #학기 입력
 
-    subject_list = []
-    subject_dict = {}
+    subject_list = [] #과목 저장 리스트
+    subject_dict = {} #과목 저장 딕셔너리
 
-    for _ in range(3):
-        subject = input("과목을 입력하시오: ")
-        subject_list.append(subject)
-        subject_dict[subject] = len(subject)
+    for _ in range(3): #3개 과목 입력하기
+        subject = input("과목을 입력하시오: ") #과목명 입력
+        subject_list.append(subject) #리스트에 추가
+        subject_dict[subject] = len(subject) #딕셔너리에 추가
 
     print()
 
-    class_name = Student(name, schoolNum, semester, subject_list)
-
-    class_name.print_name()
+    class_name = Student(name, schoolNum, semester, subject_list) #입력 받은 변수로 해당 객체 생성 및 초기화
+    #객체 정보 출력
+    class_name.print_name() 
     class_name.print_schoolNum()
     class_name.print_semester()
     class_name.print_subject()
     print()
-
+    #더 자세히 과목 정보 출력
     class_name.subject_info()
     print()
+    break #함수 종료
 
         
