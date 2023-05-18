@@ -17,11 +17,9 @@ class Student:  # Student 클래스 생성
             "4": "it융합자율학부",
         }
         if num in department.keys():  # 슬라이싱한 학번을 이용한 딕셔너리의 키값 검사
-            print(
-                f"학번은 {self.schoolNum}로 {department[num]} 소속입니다."  # 학부 구분에 따른 학번을 포함한 문자열 반환
-            )
+            return f"학번은 {self.schoolNum}로 {department[num]} 소속입니다."  # 학부 구분에 따른 학번을 포함한 문자열 반환
         else:
-            return {f"오류입니다"}  # 오류 출력
+            return f"오류입니다"  # 오류 반환
 
     def print_semester(self):  # print_semester 메서드 생성
         if self.semester <= 3:
@@ -32,7 +30,7 @@ class Student:  # Student 클래스 생성
             print("오류입니다.")  # 오류 출력
 
     def print_subject(self):  # print_subject 메서드 생성
-        print(f"{self.subject}를 수강합니다.")  # 수강과목 반환
+        return f"{self.subject}를 수강합니다."  # 수강과목 반환
 
 
 def subject_info(**subject_dict):  ## 딕셔너리를 매개변수로 받는 subject_info 메서드 생성
@@ -62,11 +60,10 @@ while True:  # while 반복문
     print()  # 한 줄 띄어주기
 
     class_name.print_name()  # 객체의 이름을 출력하는 메서드
-    class_name.print_schoolNum()  # 객체의 학번을 출력하는 메서드
+    print(class_name.print_schoolNum())  # 객체의 학번을 출력하는 메서드
     class_name.print_semester()  # 객체의 학기정보를 출력하는 메서드
-    class_name.print_subject()  # 객체의 과목을 출력하는 메서드
+    print(class_name.print_subject())  # 객체의 과목을 출력하는 메서드
     print()  # 한 줄 띄어주기
 
     subject_info(**subject_dict)  # 수강중인 과목들의 정보를 출력하는 함수
     print()  # 한 줄 띄어주기
-    break  # 출력 완료시 반복문 종료
