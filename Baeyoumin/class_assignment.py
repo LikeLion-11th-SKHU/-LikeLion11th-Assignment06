@@ -31,7 +31,7 @@ class Student :
             print(f"오류입니다") # 오류를 나타냅니다.
         
     def print_subject(self): # 수강 과목을 반환하는 메소드입니다.
-        print(f"{self.subject}를 수강합니다.")
+        return(f"{self.subject}를 수강합니다.")
 
 def subject_info(**subject_dict): # 수강 과목 출력합니다.(딕셔녀링 언패킹)
     print("자세한 수강 목록입니다.")
