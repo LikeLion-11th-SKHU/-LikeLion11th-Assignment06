@@ -79,10 +79,10 @@ while True :
 
     class_name = Student(name, schoolNum, semester, subject_list)
     # 객체 초기화
-    Student.print_name()
-    Student.print_schoolNum()
-    Student.print_semester()
-    Student.print_subject()
+    Student.print_name(class_name)
+    Student.print_schoolNum(class_name)
+    Student.print_semester(class_name)
+    Student.print_subject(class_name)
         # 객체 메서드를 부르고 출력
 
     print()
