@@ -8,7 +8,7 @@ class Student: #클래스 명 Student
     def print_name(self):
         print(f'이름은 {self.name} 입니다.')
     
-    def print_schoolNum(self): # schoolNum 슬라이싱한 겨롸를 통해 반환값 다르게 하기
+    def print_schoolNum(self): # schoolNum 슬라이싱한 결과를 통해 반환값 다르게 하기
         if self.schoolNum[5:6] == '1':
             print(f'학번은 {self.schoolNum}로 인문융합자율학부 소속입니다.')
         elif self.schoolNum[5:6] == '2':
@@ -21,10 +21,12 @@ class Student: #클래스 명 Student
             print('오류입니다.')
 
     def print_semester(self):
-        if self.semester <= 3:
+        if 1 <= self.semester <= 3:
             print(f'{self.semester}학기차인 {self.name}은 아직 전공선택 전입니다.')
-        elif self.semester > 3:
-            print(f'{self.name}은(는) {self.semester}학기차로 전공선택을 마쳤습니다.')
+        elif 4 <= self.semester <= 8:
+            print(f'{self.semester}학기차인 {self.name}은 전공선택 후입니다.')
+        else:
+            print('오류입니다.')
 
 
     def print_subject(self):
