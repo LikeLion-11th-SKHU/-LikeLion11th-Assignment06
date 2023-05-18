@@ -35,7 +35,7 @@ class Student:  # Student 클래스 생성
         print(f"{self.subject}를 수강합니다.")  # 수강과목 반환
 
 
-def subject_info(subject_dict):  ## 딕셔너리를 매개변수로 받는 subject_info 메서드 생성
+def subject_info(**subject_dict):  ## 딕셔너리를 매개변수로 받는 subject_info 메서드 생성
     print("자세한 수강목록입니다.")
     for key, value in subject_dict.items():  # 반복문을 통해 딕셔너리 탐색
         print(f"과목명: {key} / 과목명의 길이: {value}")  # 과목 딕셔너리의 key값과 value값 출력
@@ -67,6 +67,6 @@ while True:  # while 반복문
     class_name.print_subject()  # 객체의 과목을 출력하는 메서드
     print()  # 한 줄 띄어주기
 
-    subject_info(subject_dict)  # 수강중인 과목들의 정보를 출력하는 함수
+    subject_info(**subject_dict)  # 수강중인 과목들의 정보를 출력하는 함수
     print()  # 한 줄 띄어주기
     break  # 출력 완료시 반복문 종료
