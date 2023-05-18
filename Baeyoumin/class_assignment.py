@@ -23,7 +23,7 @@ class Student :
             return(f"오류입니다.\n") # 오류를 나타냅니다.
 
     def print_semester(self): # 학기를 출력하는 메소드입니다.
-        if self.semester <= 3: # 3학기 이하까지는 
+        if(self.semeter <= 3 & self.semeter > 0): # 0보다 크고 3이하까지
             print(f"{self.semester}학기차인 {self.name}은(는) 아직 전공선택 전입니다.")
         elif self.semester >= 4: # 4학기차 이상부터는
             print(f"{self.name}은(는) {self.semester}학기차로 전공선택을 마쳤습니다.") 
