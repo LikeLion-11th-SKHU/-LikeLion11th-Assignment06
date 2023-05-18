@@ -1,5 +1,5 @@
 # 클래스 메서드 ========
-class student: #가이드라인 1번
+class Student: #가이드라인 1번
     def __init__(self, name, schoolNum, semester, subject):  #속성만들기 __init__() 메서드 사용 -> 생성자 구현
         self.name = name  #name으로 self.name초기화 하기
         self.schoolNum = schoolNum #schoolNum으로 self.schoolNum초기화 하기
@@ -32,10 +32,10 @@ class student: #가이드라인 1번
     def print_semester(self): #가이드라인 4번
         if (0 < self.semester < 4): #3학기까지는 전공선택 전
             print(f'{self.name}은(는) {self.semester}학기차로 전공선택 전입니다.') #포맷팅 사용 / 학기 포함 출력
-        elif (5 < self.semester): #4학기부터는 전공선택 후
+        elif (3 < self.semester): #4학기부터는 전공선택 후
             print(f'{self.name}은(는) {self.semester}학기차로 전공선택을 마쳤습니다.') #포맷팅 사용 / 학기 포함 출력
-        elif (self.semester == 0):
-            return('오류입니다.') #0학기는 없으므로 오류 반환
+        else:
+            return('오류입니다.') #오류 반환
 
 
     def print_subject(self): #가이드라인 5번 -> 반환(reuturn 사용)
@@ -59,9 +59,10 @@ while (True): #반복문 사용
     
     name = input('이름을 입력하시오. (단, 한글로): ') #name = 이름 문자로 입력 받기
     
-    schoolNum = str(input('학번을 입력하시오.: ')) #schoolNum = 학번 정수로 입력 받기
+    schoolNum = str(input('학번을 입력하시오.: ')) #schoolNum = 학번 입력 받기(lne()함수를 위해 str사용)
     if (len(schoolNum) != 9): #9자리가 아니면
         print('9자리로 입력해주세요.') #오류문자 출력
+        schoolNum = str(input('학번을 입력하시오.: ')) #다시 입력 받기
     
     semester = int(input('학기를 입력하시오. (단, 숫자로): ')) #semester = 학기 정수로 입력 받기
     
@@ -75,7 +76,7 @@ while (True): #반복문 사용
         
     print() #터미널 출력 가이드 (가독성)
     
-    Cn = student(name, schoolNum, semester, sub_list) #객체 생성 / 초기화
+    Cn = Student(name, schoolNum, semester, sub_list) #객체 생성 / 초기화
 
     Cn.print_name() #객체 이름 출력
     print(Cn.print_schoolNum()) #학번 출력(반환했으니까 print로 출력하기)
