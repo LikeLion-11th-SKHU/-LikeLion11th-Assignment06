@@ -63,9 +63,9 @@ while True:  # 반복문(while)입니다.
     class_name = Student(name, schoolNum, semester, subject_list) # Student 객체를 만듭니다.
 
     # 이름, 학번, 학기, 수강 과목의 Student 객체를 호출합니다.
-    class_name.print_name
+    class_name.print_name()
     print(class_name.print_schoolNum())
-    class_name.print_semester
+    class_name.print_semester()
     print(class_name.print_subject())
     
     print()
