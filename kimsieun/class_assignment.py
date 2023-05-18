@@ -35,7 +35,7 @@ class Student: #가이드라인 1번
         elif (3 < self.semester): #4학기부터는 전공선택 후
             print(f'{self.name}은(는) {self.semester}학기차로 전공선택을 마쳤습니다.') #포맷팅 사용 / 학기 포함 출력
         else:
-            return('오류입니다.') #오류 반환
+            print('오류입니다.') #오류 출력
 
 
     def print_subject(self): #가이드라인 5번 -> 반환(reuturn 사용)
