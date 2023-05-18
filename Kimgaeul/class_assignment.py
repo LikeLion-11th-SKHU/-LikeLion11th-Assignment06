@@ -44,7 +44,6 @@ class Student :
         return(f'{self.subject}를 수강합니다.')
 
 
-
 def subject_info(**subject_dict) :
     # 가변 인수 subjet_dict를 받아서 딕셔너리 언패킹으로 subject_info에 넣음   
     print('자세한 수강목록 입니다.')
@@ -79,10 +78,10 @@ while True :
 
     class_name = Student(name, schoolNum, semester, subject_list)
     # 객체 초기화
-    Student.print_name(class_name)
-    Student.print_schoolNum(class_name)
-    Student.print_semester(class_name)
-    Student.print_subject(class_name)
+    class_name.print_name()
+    print(class_name.print_schoolNum())
+    class_name.print_semester()
+    print(class_name.print_subject())
         # 객체 메서드를 부르고 출력
 
     print()
