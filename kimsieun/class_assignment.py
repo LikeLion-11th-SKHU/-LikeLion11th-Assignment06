@@ -11,22 +11,22 @@ class student: #가이드라인 1번
         print(f'이름은 {self.name} 입니다.') #포맷팅 사용 / 이름 포함 출력
 
 
-    def print_schoolNum(self): #가이드라인 3번
+    def print_schoolNum(self): #가이드라인 3번 -> 반환(return사용)
         num = int(self.schoolNum[5:6]) #문자열 슬라이싱을 이용해서 학부 구별
         if (num == 1): #1이면 인문
             major = '인문융합자율학부'
-            print(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 출력
+            return(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 반환
         elif (num == 2): #2면 사융
             major = '사회융합자율학부'
-            print(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 출력
+            return(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 반환
         elif (num == 3): #3이면 미융
             major = '미디어융합자율학부'
-            print(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 출력
+            return(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 반환
         elif (num == 4): #4면 아이티
             major = 'IT융합자율학부'
-            print(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 출력
+            return(f'학번은 {self.schoolNum}로 {major} 소속입니다.') #포맷팅 사용 / 학번 포함 반환
         else:
-            print('오류입니다.') #다른 번호는 오류 처리
+            return('오류입니다.') #다른 번호는 오류 처리
     
     
     def print_semester(self): #가이드라인 4번
@@ -38,8 +38,8 @@ class student: #가이드라인 1번
             return('오류입니다.') #0학기는 없으므로 오류 반환
 
 
-    def print_subject(self): #가이드라인 5번
-        print(f'{self.subject}를 수강합니다.') #포맷팅 사용 / 과목 리스트 포함
+    def print_subject(self): #가이드라인 5번 -> 반환(reuturn 사용)
+        return(f'{self.subject}를 수강합니다.') #포맷팅 사용 / 과목 리스트 반환
     
 
 
@@ -78,9 +78,9 @@ while (True): #반복문 사용
     Cn = student(name, schoolNum, semester, sub_list) #객체 생성 / 초기화
 
     Cn.print_name() #객체 이름 출력
-    Cn.print_schoolNum() #학번 출력
+    print(Cn.print_schoolNum()) #학번 출력(반환했으니까 print로 출력하기)
     Cn.print_semester() #학기 출력
-    Cn.print_subject() #과목 출력
+    print(Cn.print_subject()) #과목 출력(반환했으니까 print로 출력하기)
     
     print() #터미널 출력 가이드 (가독성)
     
