@@ -12,20 +12,20 @@ class Student :
 
     def print_schoolNum(self): # 학번을 통해 소속학부를 알아내는 입력 방식입니다. 
         if self.schoolNum[5:6] == "1": # 만약에 학번의 6번째 숫자가 1이라면 
-            print(f"학번은 {self.schoolNum}로 인문융합자율학부 소속입니다.") 
+            return(f"학번은 {self.schoolNum}로 인문융합자율학부 소속입니다.") 
         elif self.schoolNum[5:6] == "2": #2이라면
-            print(f"학번은 {self.schoolNum}로 사회융합자율학부 소속입니다.") 
+            return(f"학번은 {self.schoolNum}로 사회융합자율학부 소속입니다.") 
         elif self.schoolNum[5:6] =="3": # 3이라면
-            print(f"학번은 {self.schoolNum}로 미디어융합자율학부 소속입니다.") 
+            return(f"학번은 {self.schoolNum}로 미디어융합자율학부 소속입니다.") 
         elif self.schoolNum[5:6] =="4": # 4이라면
-            print(f"학번은 {self.schoolNum}로 IT융합자율학부 소속입니다.") 
+            return(f"학번은 {self.schoolNum}로 IT융합자율학부 소속입니다.") 
         else: # 그 외 라면
-            print(f"오류입니다.\n") # 오류를 나타냅니다.
+            return(f"오류입니다.\n") # 오류를 나타냅니다.
 
     def print_semester(self): # 학기를 출력하는 메소드입니다.
-        if(self.semeter <= 3 and self.semeter > 0): # 0보다 크고 3이하까지
+        if (0 < self.semester < 4): # 0보다 크고 4보다 작을때까지
             print(f"{self.semester}학기차인 {self.name}은(는) 아직 전공선택 전입니다.")
-        elif self.semester >= 4: # 4학기차 이상부터는
+        elif (3 < self.semester): # 4학기차 이상부터는
             print(f"{self.name}은(는) {self.semester}학기차로 전공선택을 마쳤습니다.") 
         else: 
             print(f"오류입니다") # 오류를 나타냅니다.
@@ -63,10 +63,11 @@ while True:  # 반복문(while)입니다.
     class_name = Student(name, schoolNum, semester, subject_list) # Student 객체를 만듭니다.
 
     # 이름, 학번, 학기, 수강 과목의 Student 객체를 호출합니다.
-    Student.print_name(class_name)
-    Student.print_schoolNum(class_name)
-    Student.print_semester(class_name)
-    Student.print_subject(class_name)
+    class_name.print_name
+    print(class_name.print_schoolNum())
+    class_name.print_semester
+    print(class_name.print_subject())
+    
     print()
 
     subject_info(**subject_dict) # 과목 정보를 출력합니다.
