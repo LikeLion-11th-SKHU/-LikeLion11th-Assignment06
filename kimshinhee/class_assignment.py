@@ -41,13 +41,13 @@ class Student: #Student 클래스 생성
 def subject_info(**sub_dict): #딕셔너리 언패킹을 사용한 함수
     print("자세한 수강목록입니다.")
     for subject, sub_len in sub_dict.items(): #딕셔너리의 요소를 반복하여 key, value출력
-        print(f'과목명:{subject}/ 과목명의 길이: {sub_len}')
+        print(f'과목명: {subject}/ 과목명의 길이: {sub_len}')
 
 while True: #무한반복
     class_name = input("객체 명을 입력하시오. (단, 영문으로): ") #객체 명 입력받기
     if class_name == "종료": #무한루프를 멈출 조건: "종료"입력
         break
-    #객체 송성에 저장할 데이터 입력받기
+    #객체 속성에 저장할 데이터 입력받기
     name = input("이름을 입력하시오. (단, 한글로): ")
     schoolNum = input("학번을 입력하시오: ")
     semester = int(input("학기를 입력하시오. (단, 숫자로): ")) #숫자로만 입력받을 것이기에 int()로 받기
