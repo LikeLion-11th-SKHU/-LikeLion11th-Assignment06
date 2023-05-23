@@ -1,5 +1,6 @@
 #클래스명 Student로 생성하기
 class Student:
+    # init 메소드 사용 = 객체 초기화 기능
     def __init__(self, name, schoolNum, semester, subject):
         self.name = name
         self.schoolNum = schoolNum
@@ -19,7 +20,7 @@ class Student:
         print(f'[{self.subject}]를 수강합니다.')
 
 
-# While 반복문 사용하기
+# while 반복문 사용하기
 while True: 
     Class_name = input("객체 명을 입력하시오. (단, 영문으로):")
     # Class_name에 '종료'입력하면 반복문 빠져나오기
@@ -30,7 +31,7 @@ while True:
 
     schoolNum = input("학번을 입력하시오.:")
     #입력받은 학번 중 6번째 숫자로 소속학부 판별하기
-    a = int(schoolNum[5])
+    a = int(schoolNum[5:6])
     if a == 1:
         result = '인문융합자율학부 소속입니다.'
     elif a == 2:
@@ -48,26 +49,34 @@ while True:
     else:
         result2 = '전공선택을 마쳤습니다.'
 
-    subject = input("과목을 입력하시오.: ")
+    # 빈 딕셔너리, 리스트 생성
+    subjects_list = []
+    subjects_dict = {}
 
-Class_name.print_name()
-Class_name.print_schoolNum()
-Class_name.print_semester()
-Class_name.print_subject()
-        
-print()
+    # 사용자로부터 과목명 입력 받아 Dict에 저장하여 출력하기
+    for i in range(3):
+        subject = input("과목을 입력하시오.: ")
+        subjects_list.append(subject)
+        length = len(subject)
+        subjects_dict[subject] = length
+    subjects_list = subject
 
-print('자세한 수강목록입니다.')
+    print()
 
-def subject_info(subjects):
-    for key, value in subjects.items():
-        print(f"과목명: {key}/ 과목명의 길이: {value}")
+   # Student 클래스의 인스턴스 생성
+    student = Student(name, schoolNum, semester, subjects_list)
 
-        # 빈 딕셔너리 생성
-subjects = {}
+    student.print_name()
+    student.print_schoolNum()
+    student.print_semester()
+    student.print_subject()
 
-        # 사용자로부터 과목명 입력 받아 Dict에 저장하여 출력하기
-for i in range(3):
-    subject = input("과목을 입력하시오.: ")
-    length = len(subject)
-    subjects[subject] = length
+    print()
+
+    print('자세한 수강목록입니다.')
+
+    def subject_info(subjects):
+        for key, value in subjects.items():
+            print(f"과목명: {key}/ 과목명의 길이: {value}")
+
+    subject_info(subjects_dict)
