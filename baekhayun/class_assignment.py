@@ -32,7 +32,7 @@ class Student:
         print(f'{self.name}은(는) {self.semester}학기차로 {result2}')
 
     def print_subject(self):
-        return(f'{self.subject}를 수강합니다.')
+        return(f'{subjects_list}를 수강합니다.')
     
 def subject_info(subjects_dict):
     print('자세한 수강목록입니다.')
@@ -60,8 +60,7 @@ while True:
     # 사용자로부터 과목명 입력 받아 Dict에 저장하여 출력하기
     for i in range(3):
         subject = input("과목을 입력하시오.: ")
-        for j in subject:
-            subjects_list.append(subject)
+        subjects_list.append(subject)
         
     for h in subjects_list:
         subjects_dict[h] = len(h)
