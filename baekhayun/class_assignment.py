@@ -25,10 +25,12 @@ class Student:
             return('오류입니다.')
     
     def print_semester(self):
-        if semester < 4 :
+        if 0 < semester < 4 :
             result2 = '전공선택 전입니다.'
-        else:
+        elif 4 <= semester < 9:
             result2 = '전공선택을 마쳤습니다.'
+        else:
+            result2 = '오류입니다.'
         print(f'{self.name}은(는) {self.semester}학기차로 {result2}')
 
     def print_subject(self):
