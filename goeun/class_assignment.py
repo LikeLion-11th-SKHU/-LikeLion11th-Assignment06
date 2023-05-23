@@ -39,7 +39,7 @@ class Student :
         return(f'{self.subject}를 수강합니다.')
     
 #딕셔너리 언패킹을 사용해 딕셔너리의 Key,value를 출력하는 함수 사용.        
-def subject_info(subject_dic) :
+def subject_info(**subject_dic) :
     print("자세한 수강목록입니다.")
 
      #items() 함수를 사용해 딕셔너리에 있는 key와 value를 얻음.      
@@ -54,7 +54,7 @@ while True: #종료와 같지 않으면 계속 반복하도록 반복문 사용
             break
         name = input("이름을 입력하시오. (단, 한글로):") # 변수를 사용해 이름을 입력 받음.
         schoolNum = input("학번을 입력하시오:") #변수를 사용해 학번을 입력받음
-        semester = int(input("학기를 입력하시오:")) #변수를 사용해 학기를 입력 받음
+        semester = int(input("학기을 입력하시오.(단, 숫자로):")) #변수를 사용해 학기를 입력 받음
     
         subject_list=[] #과목을 저장할 리스트를 하나 생성해 줌
         subject_dic = {} #빈 딕셔너리 선언. 입력받은 과목들을 위해 사용
@@ -65,17 +65,17 @@ while True: #종료와 같지 않으면 계속 반복하도록 반복문 사용
                 subject_dic[sub] =len(sub)                                         
             
             
-        abc = Student(name,schoolNum,semester,subject_list) #인스턴스 생성
+        instance = Student(name,schoolNum,semester,subject_list) #인스턴스 생성
         print() #한 줄 공백(가독성을 위함)
 
-        abc.print_name()
-        print(abc.print_schoolNum())
-        abc.print_semester()
-        print(abc.print_subject())
+        instance.print_name()
+        print(instance.print_schoolNum())
+        instance.print_semester()
+        print(instance.print_subject())
         print() #한 줄 공백(가독성을 위함)
 
 
-        subject_info(subject_dic)
+        subject_info(**subject_dic)
         print() #한 줄 공백(가독성을 위함)
 
 
